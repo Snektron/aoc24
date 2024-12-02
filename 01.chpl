@@ -4,13 +4,13 @@ import IO;
 import Sort;
 
 var infile = IO.open(input_path, IO.ioMode.r);
-var reader = infile.reader(locking=false);
+var reader = infile.reader();
 
 iter input() {
-    var x, y: int;
+    var x, y: int(32);
 
     while reader.readf("%i %i", x, y) {
-      yield (x, y);
+        yield (x, y);
     }
 }
 
@@ -22,7 +22,7 @@ var dists = abs(rs - ls);
 writeln("part 1: ", + reduce dists);
 
 var max = max reduce([max reduce ls, max reduce rs]);
-var hist: [0..max] int = 0;
+var hist: [0..max] int(32) = 0;
 [r in rs] hist[r] += 1;
 [l in ls] l *= hist[l];
 
