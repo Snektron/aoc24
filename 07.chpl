@@ -67,7 +67,7 @@ proc check2(target, ref values, current, i): bool {
 var input = readDelimitedAsBlockArray(input_path, t=equation);
 var part1: atomic int;
 var part2: atomic int;
-coforall eq in input {
+forall eq in input {
     if (check1(eq.target, eq.values, eq.values[0], 1)) {
         part1.add(eq.target);
     }
