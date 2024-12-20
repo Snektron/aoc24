@@ -111,7 +111,6 @@ proc iforo(off, ia) {
 var part2: int;
 for i in 0..<program.size by -1 {
     part2 = iforo(i, part2);
-    writeln(part2);
 }
 
 writeln("part 2: ", part2);
